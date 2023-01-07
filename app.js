@@ -3,8 +3,9 @@ const app = express();
 const port = process.env.PORT || 5000;
 
 app.set("view engine", "pug");
+app.set("views", "./views");
 app.use(express.static(__dirname + "/closed"));
-app.use(express.static(__dirname + "/views"));
+
 
 app.use((req, res, next) => {
   const currentHour = new Date().getHours();
